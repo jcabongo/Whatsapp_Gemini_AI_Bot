@@ -10,7 +10,7 @@ phone_id=os.environ.get("PHONE_ID")
 phone=os.environ.get("PHONE_NUMBER")
 name="Your name or nickname" #The bot will consider this person as its owner or creator
 bot_name="Give a name to your bot" #This will be the name of your bot, eg: "Hello I am Astro Bot"
-model_name="gemini-1.5-flash-latest" #Switch to "gemini-1.0-pro" or any free model, if "gemini-1.5-flash" becomes paid in future.
+model_name="gemini-1.5-flash" #Switch to "gemini-1.0-pro" or any free model, if "gemini-1.5-flash" becomes paid in future.
 
 app=Flask(__name__)
 
@@ -44,7 +44,7 @@ convo.send_message(f'''I am using Gemini api for using you as a personal bot in 
 				   So reply to only the prompts after this. Remeber your new identity is {bot_name}.''')
 
 def send(answer):
-    url=f"https://graph.facebook.com/v18.0/{phone_id}/messages"
+    url=f"https://graph.facebook.com/v21.0/{phone_id}/messages"
     headers={
         'Authorization': f'Bearer {wa_token}',
         'Content-Type': 'application/json'
